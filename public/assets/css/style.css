@@ -1,3 +1,4 @@
-h1 {
-    color: red;
-}
+.jumbotron {
+    background-image: url(../images/pink_black.jpg);
+    background-size: cover;
+    height: 100%;}

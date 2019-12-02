@@ -13,6 +13,9 @@ const app = express();
 const router = express.Router();
 app.use(router);
 
+// Require routes file to pass routes object
+require("./config/routes")(router)
+
 // Make public a static folder
 app.use(express.static("public"));
 
@@ -37,14 +40,6 @@ mongoose.connect(db, function(error){
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.get('/', function (req, res) {
-    res.render('home');
-});
-
-app.get('/saved', function (req, res) {
-    res.render('saved');
-});
 
 // Start the server
 app.listen(PORT, function() {
