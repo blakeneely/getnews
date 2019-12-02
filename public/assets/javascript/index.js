@@ -30,12 +30,16 @@ $(document).ready(function(){
 
     // Function to render initial articles on page load
     function pageLoad(){
+        // Empty html container
         articleContainer.empty();
+        // Get request to grab headlines from api
         $.get("/api/headlines?saved=false")
         .then(function(data){
+            // chck if data actually exists, if it does pass data into renderArticleCards function to build them
             if(data && data.length) {
-                renderArticles(data);
+                renderArticleCards(data);
             }
+            // If data doesn't exist display sorry message and offer to scrape for data or go to saved articles
             else {
                 noArticles();
             };
