@@ -24,8 +24,8 @@ app.engine("handlebars", expressHandlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Connect to MongoDB
-// If deployed use deployed database, otherwise use getNewsHeadlines database
-const db = process.env.MONGODB_URI || "mongodb://localhost/getNewsHeadlines"
+// If deployed use deployed database, otherwise use mongoHeadlines database
+const db = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines"
 
 // Connect Mongoose to database
 mongoose.connect(db, function(error){
