@@ -42,6 +42,10 @@ app.get('/', function (req, res) {
     res.render('home');
 });
 
+app.get('/saved', function (req, res) {
+    res.render('saved');
+});
+
 // Start the server
 app.listen(PORT, function() {
     console.log("App running on port " + PORT + "!");
