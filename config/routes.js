@@ -1,4 +1,3 @@
-
 module.exports = function(router){
     // Route for Home
     router.get('/', function (req, res) {
