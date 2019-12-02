@@ -51,4 +51,28 @@ module.exports = function(router){
             res.json(data);
         });
     });
+    // Route to get notes from database
+    router.get("/api/notes/:headline_id?", function(req, res){
+        let query = {};
+        if(req.params.headline_id){
+            query._id = req.params.headline_id;
+        }
+        notesController.get(query, function(err, data){
+            res.json(data);
+        });
+    });
+    // Route to delete note from database
+    router.delete("/api/notes/:id", function(req, res){
+        let query = {};
+        query._id = req.params.id;
+        notesController.delete(query, function(err, data){
+            res.json(data);
+        });
+    });
+    // Route to post new notes to articles
+    router.post("/api/notes", function(req, res){
+        notesController.save(req.body, function(data){
+            res.json(data);
+        });
+    });
 };
