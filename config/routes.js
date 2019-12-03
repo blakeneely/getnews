@@ -29,7 +29,7 @@ module.exports = function(router){
     });
     // Route to get headlines from database
     router.get("/api/headlines", function(req, res){
-        let query = {};
+        var query = {};
         if (req.query.saved){
             query = req.query;
         }
@@ -46,7 +46,7 @@ module.exports = function(router){
         });
     });
     // Route to update headline in database
-    router.patch("/api/headlines", function(req, res){
+    router.get("/api/headlines", function(req, res){
         headlinesController.update(query, function(err, data){
             res.json(data);
         });
