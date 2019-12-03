@@ -2,6 +2,7 @@
 const express = require("express");
 const expressHandlebars = require("express-handlebars");
 const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
 
 // Set up port for Heroku
 const PORT = process.env.PORT || 3000;
@@ -9,6 +10,10 @@ const PORT = process.env.PORT || 3000;
 // Initialize Express
 const app = express();
 
+// Use Body Parser for json return from html
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 // Set up Express router
 const router = express.Router();
 app.use(router);

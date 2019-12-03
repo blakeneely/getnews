@@ -22,7 +22,7 @@ $(document).ready(function(){
                 _id: $(this).data("article")._id,
                 noteText: newNote
             };
-            $post("/api/notes", noteData)
+            $.post("/api/notes", noteData)
             .then(function(){
                 bootbox.hideAll();
             });
@@ -30,7 +30,7 @@ $(document).ready(function(){
     };
 
     // Function to render notes list
-    function renderNotesList(){
+    function renderNotesList(data){
         let notesToRender = [];
         let currentNote;
         if(!data.notes.length) {
@@ -99,17 +99,20 @@ $(document).ready(function(){
     };
 
     // Function to create card 
-    function createCard(){
+    function createCard(article){
         let card =
         // Use Bootstrap card layout to display article card
         $([
             '<div class="card" style="width: 18rem;">',
+            '<div class="card-header">',
+                '<a class="btn btn-outline-danger delete">X</a>',
+            '</div>',
             '<div class="card-body">',
                 '<h5 class="card-title">' + article.headline + '</h5>',
                 // '<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>',
-                '<p class="card-text">' + artcle.summary + '</p>',
+                '<p class="card-text">' + article.summary + '</p>',
                 '<a href=' + article.link + 'class="card-link">Read More</a>',
-                // '<a href="#" class="card-link">Another link</a>',
+                '<a class="btn btn-info notes">Make Note</a>',
             '</div>',
             '</div>'
         ].join(""))

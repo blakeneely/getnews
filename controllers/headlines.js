@@ -29,7 +29,7 @@ module.exports = {
         });
     },
     update: function(query, callback){
-        Headline.update({_id: query._id}, {
+        Headline.updateOne({_id: query._id}, {
             $set: query
         }, {}, callback);
     }

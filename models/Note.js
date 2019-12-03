@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const noteSchema = new Schema ({
-    _headlineID: {
+    _headlineId: {
         type: Schema.Types.ObjectId,
         ref: "Headline"
     },
