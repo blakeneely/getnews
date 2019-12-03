@@ -8,7 +8,7 @@ $(document).ready(function(){
         articleToSave.saved = true;
         // Make Ajax call to collection in database
         $.ajax({
-            method: "POST",
+            method: "PATCH",
             url: "/api/headlines",
             data: articleToSave
         })    
