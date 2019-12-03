@@ -4,7 +4,7 @@ $(document).ready(function(){
 
     // Function to save article into database
     function saveArticle(){
-        const articleToSave = $(this).parents(".card").data();
+        let articleToSave = $(this).parents(".card").data();
         articleToSave.saved = true;
         // Make Ajax call to collection in database
         $.ajax({
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
     function renderArticleCards(articles){
         // Set empty array
-        const articleCards = [];
+        let articleCards = [];
         // Loop over articles
         for(let i = 0; i < articles.length; i++){
             // Pass each article through createCard function to build it then push each one to empty array
@@ -59,7 +59,7 @@ $(document).ready(function(){
     };
 
     function createCard(article){
-        const card =
+        let card =
         // Use Bootstrap card layout to display article card
         $([
             '<div class="card" style="width: 18rem;">',
@@ -67,8 +67,12 @@ $(document).ready(function(){
                 '<h5 class="card-title">' + article.headline + '</h5>',
                 // '<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>',
                 '<p class="card-text">' + article.summary + '</p>',
-                '<a href=' + article.link + 'class="card-link">Read More</a>',
+                '<a href=https://www.cnet.com' + article.link,
+                ' class="card-link" target="blank">Read More</a>',
                 // '<a href="#" class="card-link">Another link</a>',
+                '<a class="btn btn-success save">',
+                'Save Article',
+                '</a>',
             '</div>',
             '</div>'
         ].join(""))
@@ -77,7 +81,7 @@ $(document).ready(function(){
     };
 
     function noArticles(){
-        const noArticlesAlert = 
+        let noArticlesAlert = 
         // Use Bootstrap card layout to display alert
             $([
                 "<div class='alert alert-warning text-center'>",

@@ -1,4 +1,48 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 .jumbotron {
     background-image: url(../images/pink_black.jpg);
     background-size: cover;
-    height: 100%;}
+    height: 100%;
+}
+
+.new-articles {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;    
+    justify-content: center;
+}
+
+.card {
+    margin: 10px;
+}
+
+.btn.save {
+    float: right;
+}
+
+.m-top-80 {
+    margin-top: 80px;
+}
+
+.bootbox-body btn {
+    float: right;
+    margin: 5px;
+}
+
+.note.list-group-item {
+    padding: 30px;
+}
+
+.note.list-group-item btn {
+    position: relative;
+    bottom: 10px;
+}
+
+textarea {
+    resize: none;
+    padding: 10px;
+}
