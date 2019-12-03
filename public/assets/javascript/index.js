@@ -58,7 +58,7 @@ $(document).ready(function(){
         articleContainer.append(articleCards);
     };
 
-    function createCard(){
+    function createCard(article){
         const card =
         // Use Bootstrap card layout to display article card
         $([
@@ -66,7 +66,7 @@ $(document).ready(function(){
             '<div class="card-body">',
                 '<h5 class="card-title">' + article.headline + '</h5>',
                 // '<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>',
-                '<p class="card-text">' + artcle.summary + '</p>',
+                '<p class="card-text">' + article.summary + '</p>',
                 '<a href=' + article.link + 'class="card-link">Read More</a>',
                 // '<a href="#" class="card-link">Another link</a>',
             '</div>',
