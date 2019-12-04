@@ -68,7 +68,8 @@ $(document).ready(function(){
                     "<hr />",
                     "<ul class='list-group note-container'>",
                     "</ul>",
-                    "<textarea placeholder='New Note' rows='4' cols='60'></textarea>",
+                    "<br />",
+                    "<textarea placeholder='New Note' rows='4' cols='50'></textarea>",
                     "<button class='btn btn-success save'>Save Note</button>",
                 "</div>"
             ].join("");
