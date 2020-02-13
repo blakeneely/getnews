@@ -3,6 +3,11 @@ html {
     min-height: 100%;
 }
 
+body {
+    background: black url(../images/abstract.jpg) no-repeat 50% 50% fixed;
+    background-size: cover;
+}
+
 .jumbotron {
     background-image: url(../images/pink_black.jpg);
     background-size: cover;
